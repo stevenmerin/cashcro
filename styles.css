@@ -1,0 +1,657 @@
+@font-face {
+  font-family: 'Arcadia';
+  src: url('Arcadia.woff2') format('woff2'), url('../fonts/Arcadia.eot') format('embedded-opentype'), url('../fonts/Arcadia.woff') format('woff'), url('../fonts/Arcadia.ttf') format('truetype'), url('../fonts/Arcadia.ttf') format('truetype'), url('../fonts/Arcadia.otf') format('opentype'), url('../fonts/Arcadia.otf') format('opentype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+/* Scrollbar */
+::-webkit-scrollbar-track {
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+	border-radius: 10px;
+	background-color: black;
+}
+
+::-webkit-scrollbar {
+	width: 7px;
+	background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+	border-radius: 10px;
+	/* -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); */
+	background-color: #005a2a;
+}
+
+/* Animation for Logo */
+img.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+img.vert-move {
+  -webkit-animation: mover 1s infinite  alternate;
+  animation: mover 1s infinite  alternate;
+}
+@-webkit-keyframes mover {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-30px); }
+}
+@keyframes mover {
+  0% {transform: translateY(0);}
+  100% {transform: translateY(-30px);}
+}
+
+@keyframes transitionIn {
+  from {
+    opacity: 0;
+    transform: rotateX(-10deg);
+  }
+  to {
+    opacity: 1;
+    transform: rotateX(0);
+  }
+}
+.fade-in {
+  opacity: 0;
+  transition: opacity 250ms ease-in;
+}
+.fade-in.appear {
+  opacity: 1;
+}
+
+.from-left {
+  -webkit-transform: translateX(-20%);
+  transform: translateX(-20%);
+}
+
+.from-right {
+  -webkit-transform: translateX(10%);
+  transform: translateX(10%);
+}
+
+.from-bottom {
+  -webkit-transform: translateY(20%);
+  transform: translateY(20%);
+}
+.from-top {
+  -webkit-transform: translateY(-20%);
+  transform: translateY(-20%);
+}
+.flip {
+  -webkit-transform: rotateX(180deg);
+  transform: rotateX(180deg);
+}
+.zoomOut {
+  -webkit-transform: scale(0.5);
+  transform: scale(0.5);
+}
+.from-left,
+.from-right,
+.from-bottom,
+.from-top,
+.zoomOut {
+  transition: opacity 250ms ease-in, -webkit-transform 400ms ease-in;
+  transition: opacity 250ms ease-in, transform 400ms ease-in;
+  transition: opacity 250ms ease-in, transform 400ms ease-in,
+    -webkit-transform 400ms ease-in;
+  opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear,
+.from-bottom.appear,
+.from-top.appear,
+.zoomOut.appear{ 
+  -webkit-transform: translateX(0);
+  transform: translateX(0);
+  opacity: 1;
+}
+body {
+  /* background-color: black; */
+  /* background: radial-gradient(#000, #4b2b01);  */
+  /* background-image: linear-gradient(to right, #0f0c29, #302b63, #24243e); */
+  background-color: #166d3b;
+  background-image: linear-gradient(147deg, #166d3b 0%, #000000 74%);
+}
+header {
+  height: 100vh;
+  position: relative;
+  background: radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1));
+}
+#pictureBg {
+  position: absolute;
+  z-index: -1;
+  width: 100%; 
+  height: 100%;
+  object-fit: cover;
+  /* opacity: 0.5; */
+}
+nav {
+  height: 100px;
+  line-height: 100px;
+}
+nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+  height: 100px;
+  line-height: 100px;
+}
+nav .button-collapse i {
+  height: 100px;
+  line-height: 100px;
+}
+nav .brand-logo { 
+  font-size: 1.6rem; 
+}
+#navLogo {
+  width: 180px;
+}
+nav.active {
+  /* background: #311c00 !important; */
+  background-color: rgba(0, 29, 0, 0.6) !important;
+  transition: all 0.7s; 
+}
+nav ul a {
+  font-size: 1.2rem;
+  letter-spacing: 0.1rem;
+  font-family: Arcadia, sans-serif;
+  color: #eee;
+  font-weight: 500;
+}
+nav a:hover {
+  background-image: linear-gradient(160deg, #004b23, #008000 30%, #70e000); 
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 800;
+  font-size: 1.2rem;
+}
+#welcomeContent {
+  margin-top: 7%;
+}
+.glitch {
+  font-family: Arcadia, sans-serif;
+  letter-spacing: 0.4rem;
+  color: #f5f5f5;
+  font-size: 6rem;
+  text-transform: uppercase;
+  /* Animation provies a slight random skew. Check bottom of doc
+   for more information on how to random skew. */
+  animation: glitch-skew 1.5s infinite linear alternate-reverse;
+}
+.glitch::before {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: 2px;
+  text-shadow: -3px 0 #02ec3a;
+  /* Creates an initial clip for our glitch. This works in
+   a typical top,right,bottom,left fashion and creates a mask
+   to only show a certain part of the glitch at a time. */
+  clip: rect(44px, 450px, 56px, 0);
+  /* Runs our glitch-anim defined below to run in a 5s loop, infinitely,
+   with an alternating animation to keep things fresh. */
+  animation: glitch-anim 5s infinite linear alternate-reverse;
+}
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  left: -2px;
+  text-shadow: -3px 0 #0edd40, 2px 2px #02ec3a;
+  animation: glitch-anim2 1s infinite linear alternate-reverse;
+}
+/* Creates an animation with 20 steaps. For each step, it calculates 
+ a percentage for the specific step. It then generates a random clip
+ box to be used for the random glitch effect. Also adds a very subtle
+ skew to change the 'thickness' of the glitch.*/
+@keyframes glitch-anim {
+  0% {
+    clip: rect(35px, 9999px, 8px, 0);
+    transform: skew(0.14deg);
+  }
+  5% {
+    clip: rect(68px, 9999px, 34px, 0);
+    transform: skew(0.35deg);
+  }
+  10% {
+    clip: rect(26px, 9999px, 86px, 0);
+    transform: skew(0.85deg);
+  }
+  15% {
+    clip: rect(19px, 9999px, 92px, 0);
+    transform: skew(0.3deg);
+  }
+  20% {
+    clip: rect(8px, 9999px, 64px, 0);
+    transform: skew(0.35deg);
+  }
+  25% {
+    clip: rect(57px, 9999px, 74px, 0);
+    transform: skew(0.36deg);
+  }
+  30% {
+    clip: rect(31px, 9999px, 60px, 0);
+    transform: skew(0.2deg);
+  }
+  35% {
+    clip: rect(77px, 9999px, 1px, 0);
+    transform: skew(0.35deg);
+  }
+  40% {
+    clip: rect(92px, 9999px, 88px, 0);
+    transform: skew(0.46deg);
+  }
+  45% {
+    clip: rect(23px, 9999px, 11px, 0);
+    transform: skew(0.17deg);
+  }
+  50% {
+    clip: rect(9px, 9999px, 16px, 0);
+    transform: skew(0.89deg);
+  }
+  55% {
+    clip: rect(85px, 9999px, 43px, 0);
+    transform: skew(0.45deg);
+  }
+  60% {
+    clip: rect(93px, 9999px, 86px, 0);
+    transform: skew(0.47deg);
+  }
+  65% {
+    clip: rect(21px, 9999px, 63px, 0);
+    transform: skew(0.49deg);
+  }
+  70% {
+    clip: rect(46px, 9999px, 16px, 0);
+    transform: skew(0.62deg);
+  }
+  75% {
+    clip: rect(67px, 9999px, 37px, 0);
+    transform: skew(0.09deg);
+  }
+  80% {
+    clip: rect(100px, 9999px, 90px, 0);
+    transform: skew(0.82deg);
+  }
+  85% {
+    clip: rect(54px, 9999px, 84px, 0);
+    transform: skew(0.9deg);
+  }
+  90% {
+    clip: rect(23px, 9999px, 13px, 0);
+    transform: skew(0.04deg);
+  }
+  95% {
+    clip: rect(86px, 9999px, 81px, 0);
+    transform: skew(0.42deg);
+  }
+  100% {
+    clip: rect(14px, 9999px, 22px, 0);
+    transform: skew(0.16deg);
+  }
+}
+@keyframes glitch-anim2 {
+  0% {
+    clip: rect(15px, 9999px, 8px, 0);
+    transform: skew(0.9deg);
+  }
+  5% {
+    clip: rect(9px, 9999px, 100px, 0);
+    transform: skew(0.95deg);
+  }
+  10% {
+    clip: rect(19px, 9999px, 81px, 0);
+    transform: skew(0.81deg);
+  }
+  15% {
+    clip: rect(77px, 9999px, 84px, 0);
+    transform: skew(0.79deg);
+  }
+  20% {
+    clip: rect(11px, 9999px, 23px, 0);
+    transform: skew(0.06deg);
+  }
+  25% {
+    clip: rect(77px, 9999px, 55px, 0);
+    transform: skew(1deg);
+  }
+  30% {
+    clip: rect(51px, 9999px, 20px, 0);
+    transform: skew(0.96deg);
+  }
+  35% {
+    clip: rect(76px, 9999px, 63px, 0);
+    transform: skew(0.19deg);
+  }
+  40% {
+    clip: rect(21px, 9999px, 46px, 0);
+    transform: skew(0.18deg);
+  }
+  45% {
+    clip: rect(51px, 9999px, 75px, 0);
+    transform: skew(0.43deg);
+  }
+  50% {
+    clip: rect(41px, 9999px, 52px, 0);
+    transform: skew(0.85deg);
+  }
+  55% {
+    clip: rect(73px, 9999px, 33px, 0);
+    transform: skew(0.19deg);
+  }
+  60% {
+    clip: rect(16px, 9999px, 49px, 0);
+    transform: skew(0.42deg);
+  }
+  65% {
+    clip: rect(2px, 9999px, 92px, 0);
+    transform: skew(0.42deg);
+  }
+  70% {
+    clip: rect(52px, 9999px, 77px, 0);
+    transform: skew(0.75deg);
+  }
+  75% {
+    clip: rect(86px, 9999px, 12px, 0);
+    transform: skew(0.06deg);
+  }
+  80% {
+    clip: rect(84px, 9999px, 67px, 0);
+    transform: skew(0.43deg);
+  }
+  85% {
+    clip: rect(69px, 9999px, 22px, 0);
+    transform: skew(0.11deg);
+  }
+  90% {
+    clip: rect(21px, 9999px, 67px, 0);
+    transform: skew(0.78deg);
+  }
+  95% {
+    clip: rect(85px, 9999px, 61px, 0);
+    transform: skew(0.11deg);
+  }
+  100% {
+    clip: rect(87px, 9999px, 11px, 0);
+    transform: skew(0.43deg);
+  }
+}
+@keyframes glitch-skew {
+  0% {
+    transform: skew(2deg);
+  }
+  /* 10% {
+    transform: skew(5deg);
+  } */
+  20% {
+    transform: skew(-3deg);
+  }
+  /* 30% {
+    transform: skew(5deg);
+  } */
+  40% {
+    transform: skew(-3deg);
+  }
+  /* 50% {
+    transform: skew(2deg);
+  } */
+  60% {
+    transform: skew(4deg);
+  }
+  /* 70% {
+    transform: skew(-4deg);
+  } */
+  80% {
+    transform: skew(0deg);
+  }
+  /* 90% {
+    transform: skew(5deg);
+  } */
+  100% {
+    transform: skew(4deg);
+  }
+}
+#welcomeContent p {
+  color: #eee;
+  letter-spacing: 0.1em;
+  font-size: 1.1rem;
+}
+#socialIcons {
+  margin-top: 5%;
+}
+#socialIcons a:hover {
+  background: linear-gradient(to right, #70e000 0%, #005a2a 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#socialIcons .btn-floating i {
+  font-size: 3rem;
+}
+#FAQSection {
+  margin-top: 5%;
+}
+#FAQSection h1 {
+  color: #eee;
+  font-size: 4.5rem;
+}
+#FAQSection p {
+  color: #eee;
+  margin-top: -27px;
+  letter-spacing: 0.1rem;
+  font-size: 0.9rem;
+}
+span {
+  background-image: linear-gradient(160deg, #005a2a, #008000 20%, #70e000); 
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.collapsible {
+  border-color: transparent;
+  border-radius: 15px;
+  /* background: linear-gradient(to bottom, rgba(55, 6, 23, 0.5), rgba(55, 6, 23, 0.9)); */
+}
+.collapsible-body {
+  border-color: transparent;
+}
+.collapsible-header {
+  background: transparent;
+  border-bottom-color: transparent;
+  color: #D7DADC;
+  font-size: 1.5rem;
+}
+.collapsible-body span {
+  font-size: 1.2rem;
+  font-weight: 600;
+  background:#D7DADC;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+#tokenomicsSection {
+  margin-top: 10%;
+}
+#tokenomicsSection h1 {
+  font-size: 4.5rem;
+}
+#tokenomicsSection p {
+  color: #eee;
+  font-family: Arcadia, sans-serif;
+  font-size: 1.5rem;
+}
+#roadmapSection {
+  margin-top: 10%;
+  margin-bottom: 10%;
+}
+#roadmapSection h1 {
+  font-size: 4.5rem;
+}
+#roadmapSection h5 {
+  /* color: #eee; */
+  /* text-align: right; */
+  font-family: Arcadia, sans-serif;
+  letter-spacing: 0.1rem;
+}
+#roadmapSection p {
+  color: #D7DADC;
+  font-size: 1.2rem;
+  font-family: Arcadia, sans-serif;
+}
+.roadMapSection1 {
+  border-radius: 25px;
+  border: 10px solid transparent;
+  border-right: 10px double #008000;
+  padding-right: 2% !important;
+  text-align: right;
+  position: relative;
+}
+.roadMapSection2 {
+  border-radius: 25px;
+  border: 10px solid transparent;
+  border-left: 10px double #008000;
+  padding-left: 2% !important;
+  margin-left: -21px !important;
+  margin-top: -42px !important;
+  position: relative;
+}
+.roadMapSection3 {
+  border-radius: 25px;
+  border: 10px solid transparent;
+  border-right: 10px double #008000;
+  padding-right: 2% !important;
+  margin-top: -42px !important;
+  text-align: right;
+  position: relative;
+}
+.page-footer {
+  background-color: #021b0e;
+  color: #e0e0e0 ;
+}
+.page-footer p {
+  line-height: 1.7;
+}
+.page-footer a:hover {
+  background: linear-gradient(to right, #70e000 0%, #005a2a 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+/* Media Queries */
+
+/* Large screens  */
+@media only screen and (min-width : 1824px) {
+  #welcomeContent {
+    margin-top: 12%;
+  }
+}
+/* Mobile Screens */
+@media screen and (max-width: 600px) { 
+  nav {
+    height: 80px;
+    line-height: 80px;
+  }
+  nav i, nav [class^="mdi-"], nav [class*="mdi-"], nav i.material-icons {
+    height: 80px;
+    line-height: 80px;
+  }
+  nav .button-collapse i {
+    height: 80px;
+    line-height: 80px;
+  }
+  #navLogo {
+    width: 150px;
+  }
+  .sidenav li > a {
+    color: #fff;
+    text-align: center;
+    font-family: Arcadia, sans-serif;
+  }
+  .sidenav li:first-child {
+    margin-top: 20px;
+  }
+  #mobile-menu a{
+    background: linear-gradient(to right, #00b353 0%, #008000 50%, #70e000 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight:900;
+    /* font-size: 1.1rem; */
+  }
+  .sidenav {
+    background: radial-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.9));
+    background-size: 50%;
+    height: auto; 
+    width: 100%;
+    top: auto;
+    padding: 0;
+  }
+  header {
+    height: auto;
+  }
+  .glitch {
+    font-size: 3rem;
+  }
+  #welcomeContent {
+    margin: 0;
+    padding: 20% 5%;
+  }
+  #welcomeContent p {
+    font-size: 0.9rem;
+  }
+  #socialIcons .btn-floating i {
+    font-size: 2rem;
+  }
+  #FAQSection h1 {
+    font-size: 2.2rem;
+  }
+  .collapsible-body span {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .collapsible-header {
+    font-size: 1.2rem;
+  }
+  #tokenomicsSection h1 {
+    font-size: 2.2rem;
+  }
+  #tokenomicsSection p {
+    font-size: 1rem;
+  }
+  #roadmapSection h1 {
+    font-size: 2.2rem;
+  }
+  #roadmapSection p {
+    font-size: 1rem;
+  }
+  .roadMapSection1 {
+    border-radius: 1px;
+    border: 10px solid transparent;
+    border-right: 10px double #008000;
+    padding-right: 25px !important;
+    margin-left: -27px !important;
+    padding-bottom: 5% !important;
+  }
+  .roadMapSection2 {
+    border-radius: 1px;
+    border: 10px solid transparent;
+    border-right: 10px double #008000;
+    padding-right: 25px !important;
+    text-align: right;
+    margin-left: -27px !important;
+    padding-bottom: 5% !important;
+  }
+  .roadMapSection3 {
+    border-radius: 1px;
+    border: 10px solid transparent;
+    border-right: 10px double #008000;
+    padding-right: 25px !important;
+    margin-left: -27px !important;
+    padding-bottom: 5% !important;
+  }
+}

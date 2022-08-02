@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <!-- Font awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
+  <!--Import Google Icon Font-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel='icon' href='images/logWebp.webp'>
+  <link rel="stylesheet" href="styles.css">
+  <title>CashCro</title>
+</head>
+
+<body>
+  <!-- Introduction -->
+  <header>
+    <video src="videos/bgVid720.mp4" muted autoplay loop class="scrollspy" id="pictureBg"></video>
+    <div class="navbar-fixed">
+      <!-- Navbar -->
+      <nav class="nav-wrapper transparent z-depth-0">
+        <div class="container">
+          <a href="#" class="brand-logo"><img src="images/logWebp.webp" alt="logopic" id="navLogo"
+              class="responsive-img"></a>
+          <a href="#" class="sidenav-trigger" data-target="mobile-menu">
+            <i class="material-icons">menu</i>
+            <ul class="hide-on-med-and-down right" id="liPos">
+              <li><a href="#welcomeContent">Intro</a></li>
+              <li><a href="#FAQSection">FAQ</a></li>
+              <li><a href="#tokenomicsSection">Tokenomics</a></li>
+              <li><a href="#roadmapSection">Roadmap</a></li>
+            </ul>
+          </a>
+        </div>
+      </nav>
+    </div>
+    <ul class="sidenav" id="mobile-menu">
+      <li><a href="#welcomeContent">Intro</a></li>
+      <li><a href="#FAQSection">FAQ</a></li>
+      <li><a href="#tokenomicsSection">Tokenomics</a></li>
+      <li><a href="#roadmapSection">Roadmap</a></li>
+    </ul>
+    <!-- Content -->
+    <div class="row">
+      <div class="col s12 l8 push-l2 center scrollspy" id="welcomeContent">
+        <h1 class="glitch" data-text="CashCro">CashCro</h1>
+        <p>Welcome to CashCro, a smart contract token deployed on the Cronos chain. CashCro tokenomics are designed to
+          reward investors with the highest passive return in the market; 10% rewards in CRO on each buy and sell
+          transaction.</p>
+        <p>With such a high payout the goal of financial freedom can be achieved simply by buying and holding this
+          token. Your rewards can be tracked with our rewards tracker Dapp. </p>
+        <div class="row" id="socialIcons">
+          <div class="col s12 l12 center">
+            <a href="https://twitter.com/cash_cro" target="_blank" class="tooltipped btn-floating btn-large transparent z-depth-0"
+              data-tooltip="Twitter">
+              <i class="fab fa-twitter"></i>
+            </a>
+            <a href="https://t.me/CashCro" target="_blank" class="large tooltipped btn-floating btn-large transparent z-depth-0"
+              data-tooltip="Telegram">
+              <i class="large fab fa-telegram-plane"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- FAQ -->
+  <section class="container scrollspy" id="FAQSection">
+    <div class="row">
+      <div class="col s12 center">
+        <h1 class="glitch" data-text="FAQ">FAQ</h1>
+        <p>Frequently Asked Questions</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12">
+        <div class="col s12 l12">
+          <ul class="collapsible z-depth-0">
+            <li>
+              <div class="collapsible-header"><span><i class="far fa-question-circle"></i></span></i>
+                Is this contract safe?
+                <span class="badge"><i class="fas fa-chevron-down"></i></span>
+              </div>
+              <div class="collapsible-body">
+                <span>Yes - this contract has been tested and deployed previously. There are hard coded limited on taxes
+                  and transactions so that the developer cannot do anything nefarious.</span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><span><i class="far fa-question-circle"></i></span></i>
+                How long will the Liquidity be locked for?
+                <span class="badge"><i class="fas fa-chevron-down"></i></span>
+              </div>
+              <div class="collapsible-body">
+                <span>Initially the Liquidity will be locked for 1 month and extended when milestones are
+                  reached.</span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><span><i class="far fa-question-circle"></i></span></i>
+                Start liquidity?
+                <span class="badge"><i class="fas fa-chevron-down"></i></span>
+              </div>
+              <div class="collapsible-body">
+                <span>Starting liquidity will be around 2000 - 3000 CRO.</span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><span><i class="far fa-question-circle"></i></span></i>
+                Marketing plan?
+                <span class="badge"><i class="fas fa-chevron-down"></i></span>
+              </div>
+              <div class="collapsible-body">
+                <span>Marketing strategy will primarily start within telegram space and then expand to greater networks
+                  such as twitter, youtube, tiktok, DEX listings, giveaway contests and prizes and more!</span>
+              </div>
+            </li>
+            <li>
+              <div class="collapsible-header"><span><i class="far fa-question-circle"></i></span></i>
+                About us?
+                <span class="badge"><i class="fas fa-chevron-down"></i></span>
+              </div>
+              <div class="collapsible-body">
+                <span>The team is reliable, trustworthy, and able to deliver on the promises they make. We have many
+                  years of collective experience within crypto and access to various influencers and resources.</span>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Tokenomics -->
+  <section class="container scrollspy" id="tokenomicsSection">
+    <div class="row">
+      <div class="col s12 center">
+        <h1 class="glitch" data-text="Tokenomics">Tokenomics</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s12 l6">
+        <img src="images/logWebp.webp" alt="logoPic" class="responsive-img vert-move">
+      </div>
+      <div class="col s10 l6 push-s2">
+        <p class="slide-in from-left">Total buy and sell tax: <span>15%</span></p>
+        <p class="slide-in from-right">💰 <span>10%</span> Cro rewards</p>
+        <p class="slide-in from-left">🐳 <span>1%</span> LP </p>
+        <p class="slide-in from-right">🔊 <span>4%</span> Marketing</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Roadmap -->
+  <section class="container scrollspy" id="roadmapSection">
+    <div class="row">
+      <div class="col s12 center">
+        <h1 class="glitch" data-text="Roadmap">Roadmap</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col s11 m6 l6 roadMapSection1 slide-in from-left">
+        <h5><b><span>PHASE 1</span></b></h5>
+        <p>Telegram pre-launch marketing</p>
+        <p>Twitter created</p>
+        <p>Website Live</p>
+        <p>Rewards Dashboard Live</p>
+        <p>Fair launch CashCro on CRONOS chain</p>
+        <p>Stickers made</p>
+        <p>Organic and community growth</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m6 l6 push-l6 push-m6 roadMapSection2 slide-in from-right">
+        <h5><b><span>PHASE 2</span></b></h5>
+        <p>Twitter marketing</p>
+        <p>Telegram Marketing</p>
+        <p>300+ Holders</p>
+        <p>100k MC</p>
+        <p>Meme contests</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m6 l6 roadMapSection3 slide-in from-left">
+        <h5><b><span>PHASE 3</span></b></h5>
+        <p>Trending Dexscreener</p>
+        <p>YouTube, Twitter, & TikTok -Influencers</p>
+        <p>Listing on CoinGecko/CMC</p>
+        <p>Audit</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m6 l6 push-l6 push-m6 roadMapSection2 slide-in from-right">
+        <h5><b><span>PHASE 4</span></b></h5>
+        <p>Staking</p>
+        <p>NFT platform</p>
+        <p>CashCro Swap</p>
+        <p>CashCro Merchandise</p>
+        <p>Dex listings </p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m6 l6 roadMapSection3 slide-in from-left">
+        <h5><b><span>PHASE 5</span></b></h5>
+        <p>Redefine Roadmap</p>
+      </div>
+    </div>
+    <!-- <div class="row">
+      <div class="col s11 m6 l6 roadMapSection3 slide-in from-left" id="">
+        <p class="slide-in zoomOut"><span>3.</span> Post launch marketing</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m6 l6 push-l6 push-m6 roadMapSection2 slide-in from-right" id="">
+        <p class="slide-in zoomOut"><span>4.</span> Functional Dapp</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m6 l6 roadMapSection3 slide-in from-left" id="">
+        <p class="slide-in zoomOut"><span>5.</span> Grow to 1000 holders</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m6 l6 push-l6 push-m6 roadMapSection2 slide-in from-right" id="">
+        <p class="slide-in zoomOut"><span>6.</span> Redefine Roadmap</p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col s11 m6 l6 roadMapSection3 slide-in from-left" id="">
+        <p class="slide-in zoomOut"><span>7.</span> Dex listings</p>
+      </div>
+    </div> -->
+
+  </section>
+
+  <!-- Footer -->
+  <footer class="page-footer">
+    <div class="container">
+      <div class="row">
+        <div class="col s12 l6">
+          <h5><b>DISCLAIMER</b></h5>
+          <p>The content of this information within Plan or official documentation are provided for information purposes
+            only and shall not in any way constitute an investment advice or investment recommendation in any product
+            discussed. Buy at your own risk. It is strongly recommended that you seek professional investment advice
+            before making any investment decision. Any investment decision that you make should be based on an
+            assessment of your risks in consultation with your investment adviser.</p>
+        </div>
+        <div class="col s12 l6 push-l2">
+          <h5>Connect with us</h5>
+          <a href="https://twitter.com/cash_cro" target="_blank" class="tooltipped btn-floating transparent z-depth-0"
+            data-tooltip="Twitter">
+            <i class="fab fa-twitter"></i>
+          </a></li>
+          <a href="https://t.me/CashCro" target="_blank" class="tooltipped btn-floating transparent z-depth-0"
+            data-tooltip="Telegram">
+            <i class="fab fa-telegram-plane"></i>
+          </a></li>
+        </div>
+      </div>
+    </div>
+    <div class="footer-copyright">
+      <div class="container center">
+        <p>Copyright © 2022</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+  <!-- Jquery -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js "></script>
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.sidenav').sidenav();
+      $('.tooltipped').tooltip();
+      $('.scrollspy').scrollSpy();
+      $('.collapsible').collapsible();
+    });
+  </script>
+</body>
+
+</html>
